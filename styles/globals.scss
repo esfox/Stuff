@@ -1,0 +1,173 @@
+@font-face {
+  font-family: 'Hind';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url(/fonts/Hind-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Hind';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url(/fonts/Hind-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Hind';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url(/fonts/Hind-Medium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Hind';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url(/fonts/Hind-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Hind';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url(/fonts/Hind-Bold.ttf) format('truetype');
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Hind', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: var(--color-background);
+  overflow: hidden;
+  color: var(--color-foreground);
+
+  #__next {
+    height: 100%;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Default overrides */
+
+h1, h2, h3, h4, h5, h6, p, hr {
+  margin: 0;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid var(--color-foreground-light);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  color: white;
+  background: var(--color-primary);
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: .7rem 1rem;
+  transition: background var(--hover-dim-duration);
+
+  &:focus {
+    outline: none;
+  }
+
+  &.clear {
+    background: none;
+    font-weight: normal;
+    color: unset;
+    border-radius: unset;
+    @extend .hover-dim-bg;
+
+    &:focus {
+      background: initial;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    background: var(--color-primary-dark);
+  }
+}
+
+input,
+textarea {
+  padding: .6rem;
+  background: var(--color-background-light);
+  font-size: 1rem;
+  color: var(--color-foreground);
+  border: none;
+  transition: box-shadow var(--hover-dim-duration);
+
+  &:focus {
+    outline: none;
+    box-shadow: inset 0px -2px 0 var(--color-primary);
+  }
+
+  &::placeholder {
+    color: var(--color-foreground-dark);
+  }
+}
+
+/* Custom Classes */
+
+.fg-colored {
+  color: var(--color-primary);
+}
+
+.fg-light {
+  color: var(--color-foreground-invert);
+}
+
+.bg {
+  background: var(--color-background);
+}
+
+.bg-light {
+  background: var(--color-background-light);
+}
+
+.bg-colored {
+  background: var(--color-primary);
+}
+
+.hover-dim-bg {
+  transition: background var(--hover-dim-duration);
+
+  &:hover {
+    background: var(--color-dim-bg);
+  }
+}
+
+.flex-gap-1 {
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
+
+  &.centered {
+    place-items: center;
+  }
+
+  &.pancake-layout {
+    grid-template-rows: auto 1fr auto;
+  }
+}
